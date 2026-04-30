@@ -1,33 +1,36 @@
-import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QVBoxLayout, QWidget, QListWidget, QLabel
+from PyQt5.QtWidgets import QMainWindow, QVBoxLayout, QWidget, QListWidget, QLabel, QPushButton
+from ui.styles import main_window_style
 
-class HotkeyManager(QMainWindow):
-    def __init__(self):
+class MainWindow(QMainWindow):
+    def __init__(self, config_manager, hotkey_manager):
         super().__init__()
-        self.setWindowTitle("Hotkey Manager")
-        self.setGeometry(100, 100, 600, 400)
-
+        self.config = config_manager
+        self.hkm = hotkey_manager
+        self.setWindowTitle("Windows Hotkey Manager")
+        self.resize(600, 400)
+        self.setStyleSheet(main_window_style)
         self.initUI()
 
     def initUI(self):
         central_widget = QWidget()
         self.setCentralWidget(central_widget)
-
         layout = QVBoxLayout()
 
-        label = QLabel("List of Hotkeys:")
-        layout.addWidget(label)
+        self.label = QLabel("Danh sách phím tắt hiện có:")
+        layout.addWidget(self.label)
 
-        self.hotkey_list = QListWidget()
-        # Example hotkeys
-        hotkeys = ["Ctrl+C - Copy", "Ctrl+V - Paste", "Alt+Tab - Switch Apps"]
-        self.hotkey_list.addItems(hotkeys)
-        
-        layout.addWidget(self.hotkey_list)
+        self.list_widget = QListWidget()
+        self.refresh_list()
+        layout.addWidget(self.list_widget)
+
+        self.btn_add = QPushButton("➕ New Hotkey")
+        # Kết nối nút bấm với chức năng mở cửa sổ tạo (cần import CreateHotkeyWindow)
+        layout.addWidget(self.btn_add)
+
         central_widget.setLayout(layout)
 
-if __name__ == '__main__':
-    app = QApplication(sys.argv)
-    mainWin = HotkeyManager()
-    mainWin.show()
-    sys.exit(app.exec_())
+    def refresh_list(self):
+        self.list_widget.clear()
+        hotkeys = self.config.load_config()
+        for hk in hotkeys:
+            self.list_widget.addItem(f"{hk.name}: {hk.keys} -> {hk.action}")
