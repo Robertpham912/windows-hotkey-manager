@@ -1,89 +1,124 @@
 # ⌨️ Windows Hotkey Manager
 
-A powerful Windows hotkey manager to create custom keyboard shortcuts for launching applications and executing actions.
+Một ứng dụng quản lý phím tắt Windows mạnh mẽ để tạo các phím tắt tùy chỉnh cho việc khởi chạy ứng dụng và thực thi các hành động.
 
-## 🎯 Features
+## 🎯 Tính Năng
 
-- ✅ Create custom hotkeys with any key combination (Ctrl, Shift, Alt, Win)
-- ✅ Launch applications with custom shortcuts
-- ✅ Execute system commands and actions
-- ✅ Save and load hotkey configurations
-- ✅ Beautiful PyQt5 GUI interface
-- ✅ Real-time hotkey monitoring
-- ✅ Category-based hotkey organization
+- ✅ Tạo phím tắt tùy chỉnh với bất kỳ tổ hợp phím nào (Ctrl, Shift, Alt, Win)
+- ✅ Khởi chạy ứng dụng bằng phím tắt tùy chỉnh
+- ✅ Thực thi lệnh hệ thống và các hành động
+- ✅ Lưu và tải cấu hình phím tắt
+- ✅ Giao diện GUI đẹp mắt với PyQt5
+- ✅ Giám sát phím tắt theo thời gian thực
+- ✅ Tổ chức phím tắt theo danh mục
 
-## 📋 Project Structure
+## 📋 Cấu Trúc Dự Án
 
 ```
 windows-hotkey-manager/
-├── main.py                 # Main application entry point
-├── requirements.txt        # Python dependencies
-├── config.py              # Configuration manager (save/load JSON)
-├── models.py              # Hotkey data model
-├── hotkey_manager.py      # Hotkey detection and execution
+├── main.py                 # Điểm vào chính của ứng dụng
+├── requirements.txt        # Các dependencies Python
+├── config.py              # Trình quản lý cấu hình (lưu/tải JSON)
+├── models.py              # Mô hình dữ liệu Hotkey
+├── hotkey_manager.py      # Phát hiện và thực thi phím tắt
 ├── ui/
-│   ├── __init__.py        # UI package initialization
-│   ├── main_window.py     # Main window with hotkey list
-│   ├── create_hotkey.py   # Dialog for creating new hotkeys
-│   └── styles.py          # PyQt5 styling
-└── README.md              # This file
+│   ├── __init__.py        # Khởi tạo gói UI
+│   ├── main_window.py     # Cửa sổ chính với danh sách phím tắt
+│   ├── create_hotkey.py   # Dialog tạo phím tắt mới
+│   └── styles.py          # Định dạng PyQt5
+└── README.md              # Tệp này
 ```
 
-## 🚀 Installation
+## 🚀 Cài Đặt
 
-### Prerequisites
-- Python 3.8+
-- pip (Python package manager)
+### Yêu Cầu Hệ Thống
+- Python 3.8 trở lên
+- pip (Trình quản lý gói Python)
 
-### Steps
+### Phương Pháp 1: Cài từ File ZIP (Dễ Nhất)
 
-1. **Clone the repository**
+1. **Tải file ZIP**
+   - Vào trang GitHub: https://github.com/Robertpham912/windows-hotkey-manager
+   - Click nút **"Code"** → **"Download ZIP"**
+   - Giải nén file ZIP vào thư mục bất kỳ
+
+2. **Mở Command Prompt (CMD) hoặc PowerShell**
+   ```bash
+   cd C:\đường\dẫn\đến\windows-hotkey-manager
+   ```
+
+3. **Cài đặt các dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Chạy ứng dụng**
+   ```bash
+   python main.py
+   ```
+
+### Phương Pháp 2: Dùng Git (Nếu Có Git)
+
+1. **Clone repository**
    ```bash
    git clone https://github.com/Robertpham912/windows-hotkey-manager.git
    cd windows-hotkey-manager
    ```
 
-2. **Create a virtual environment** (optional but recommended)
-   ```bash
-   python -m venv venv
-   source venv/Scripts/activate  # On Windows
-   # or
-   source venv/bin/activate      # On macOS/Linux
-   ```
-
-3. **Install dependencies**
+2. **Cài đặt các dependencies**
    ```bash
    pip install -r requirements.txt
    ```
 
-## 🎮 Usage
+3. **Chạy ứng dụng**
+   ```bash
+   python main.py
+   ```
 
-### Run the application
+### Phương Pháp 3: Tạo Virtual Environment (Khuyến Nghị)
+
+```bash
+# Tạo virtual environment
+python -m venv venv
+
+# Kích hoạt (trên Windows)
+venv\Scripts\activate
+
+# Cài đặt dependencies
+pip install -r requirements.txt
+
+# Chạy ứng dụng
+python main.py
+```
+
+## 🎮 Cách Sử Dụng
+
+### Chạy ứng dụng
 ```bash
 python main.py
 ```
 
-### Create a hotkey
-1. Click **"➕ New Hotkey"** button
-2. Enter hotkey name (e.g., "Open Spotify")
-3. Select key combination (modifiers + key)
-4. Choose action or application
-5. Click **"💾 Save Hotkey"**
+### Tạo phím tắt mới
+1. Click nút **"➕ Phím Tắt Mới"**
+2. Nhập tên phím tắt (ví dụ: "Mở Spotify")
+3. Chọn tổ hợp phím (modifiers + phím)
+4. Chọn hành động hoặc ứng dụng
+5. Click **"💾 Lưu Phím Tắt"**
 
-### Manage hotkeys
-- **View**: All hotkeys appear in the main list
-- **Edit**: Select and click **"✏️ Edit"**
-- **Delete**: Select and click **"🗑️ Delete"**
-- **Search**: Use the search bar to find hotkeys
+### Quản lý phím tắt
+- **Xem**: Tất cả phím tắt hiển thị trong danh sách chính
+- **Sửa**: Chọn và click **"✏️ Sửa"**
+- **Xóa**: Chọn và click **"🗑️ Xóa"**
+- **Tìm kiếm**: Sử dụng thanh tìm kiếm để tìm phím tắt
 
-## 📁 Configuration
+## 📁 Cấu Hình
 
-Hotkeys are saved in `hotkeys.json`:
+Phím tắt được lưu trong `hotkeys.json`:
 ```json
 {
   "hotkeys": [
     {
-      "name": "Open Spotify",
+      "name": "Mở Spotify",
       "keys": "Ctrl+Alt+S",
       "action": "spotify.exe"
     }
@@ -91,55 +126,69 @@ Hotkeys are saved in `hotkeys.json`:
 }
 ```
 
-## 🔧 Development
+## 🔧 Phát Triển
 
-### File Descriptions
+### Mô Tả Các Tệp
 
-- **main.py**: Initializes the PyQt5 application and starts the hotkey manager
-- **config.py**: Handles JSON-based configuration storage
-- **models.py**: Defines the `Hotkey` data class
-- **hotkey_manager.py**: Monitors global keyboard input and triggers callbacks
-- **ui/main_window.py**: Main UI with hotkey list, categories, and action buttons
-- **ui/create_hotkey.py**: Dialog for creating/editing hotkeys
-- **ui/styles.py**: PyQt5 stylesheet definitions
+- **main.py**: Khởi tạo ứng dụng PyQt5 và bắt đầu quản lý phím tắt
+- **config.py**: Xử lý lưu trữ cấu hình dựa trên JSON
+- **models.py**: Định nghĩa lớp dữ liệu `Hotkey`
+- **hotkey_manager.py**: Giám sát đầu vào bàn phím toàn cục và kích hoạt các callback
+- **ui/main_window.py**: UI chính với danh sách phím tắt, danh mục và các nút hành động
+- **ui/create_hotkey.py**: Dialog tạo/sửa phím tắt
+- **ui/styles.py**: Định nghĩa stylesheet PyQt5
 
-### Technologies Used
-- **PyQt5**: GUI framework
-- **pynput**: Global keyboard listener
-- **JSON**: Configuration storage
+### Công Nghệ Sử Dụng
+- **PyQt5**: Framework giao diện
+- **pynput**: Lắng nghe bàn phím toàn cục
+- **JSON**: Lưu trữ cấu hình
 
 ## 📦 Dependencies
 
-See `requirements.txt` for complete list:
+Xem `requirements.txt` để danh sách đầy đủ:
 - PyQt5
 - pynput
 
-## 🐛 Troubleshooting
+## 🐛 Khắc Phục Sự Cố
 
-### Hotkeys not working?
-- Ensure the application has necessary permissions
-- Try running as administrator
-- Check `hotkeys.json` for correct syntax
+### Phím tắt không hoạt động?
+- Đảm bảo ứng dụng có quyền cần thiết
+- Thử chạy với quyền Administrator
+- Kiểm tra `hotkeys.json` để xác nhận cú pháp
 
-### GUI not displaying?
-- Verify PyQt5 is installed: `pip install PyQt5`
-- Check Python version (3.8+ required)
+### Giao diện không hiển thị?
+- Xác minh PyQt5 được cài đặt: `pip install PyQt5`
+- Kiểm tra phiên bản Python (3.8+ yêu cầu)
 
-## 📝 License
+### Python không được tìm thấy?
+- Cài đặt Python từ: https://www.python.org/downloads/
+- Đảm bảo chọn "Add Python to PATH" khi cài đặt
+- Khởi động lại máy tính
 
-MIT License - feel free to use this project!
+## 💡 Mẹo & Thủ Thuật
 
-## 👨‍💻 Author
+1. **Chạy khi khởi động Windows**: Tạo shortcut trong thư mục Startup
+2. **Quyền Admin**: Chạy CMD/PowerShell với quyền Administrator nếu gặp lỗi
+3. **Ví dụ phím tắt**:
+   - `Ctrl+Alt+N` - Mở Notepad
+   - `Ctrl+Alt+C` - Mở Calculator
+   - `Win+Shift+S` - Screenshot
+
+## 📝 Giấy Phép
+
+MIT License - Tự do sử dụng dự án này!
+
+## 👨‍💻 Tác Giả
 
 **Phạm Gia Phúc** (Robertpham912)
 
-## 🤝 Contributing
+## 🤝 Đóng Góp
 
-Contributions are welcome! Feel free to:
-- Report bugs
-- Suggest features
-- Submit pull requests
+Chúng tôi chào đón các đóng góp! Bạn có thể:
+- Báo cáo lỗi
+- Đề xuất tính năng mới
+- Gửi pull requests
 
 ---
 
-Made with ❤️ for Windows users
+Made with ❤️ cho các người dùng Windows
