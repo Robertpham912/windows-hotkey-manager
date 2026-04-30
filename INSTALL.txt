@@ -1,0 +1,73 @@
+=====================================
+WINDOWS HOTKEY MANAGER - HƯỚNG DẪN CÀI ĐẶT
+=====================================
+
+📋 YÊU CẦU:
+- Windows 7 trở lên
+- Python 3.8+ (đã cài sẵn)
+
+=====================================
+🚀 CÀI ĐẶT VÀ CHẠY (3 BƯỚC)
+=====================================
+
+BƯỚC 1: Chạy setup.bat
+- Tìm file "setup.bat" trong thư mục
+- Double-click để cài đặt
+- Chờ hiện thông báo "✓ Cài đặt hoàn tất!"
+- Bấm bất kỳ phím để đóng
+
+BƯỚC 2: Chạy run.bat
+- Tìm file "run.bat" trong thư mục
+- Double-click để mở ứng dụng
+- Cửa sổ Windows Hotkey Manager sẽ xuất hiện
+
+BƯỚC 3: Sử dụng
+- Click "➕ New Hotkey" để tạo phím tắt mới
+- Nhập tên, chọn key combination, chọn ứng dụng
+- Click "💾 Save Hotkey"
+- Phím tắt sẽ hoạt động ngay!
+
+=====================================
+⚙️ CHỨC NĂNG
+=====================================
+
+✓ Tạo phím tắt tùy chỉnh (Ctrl+Alt+X, Win+S, ...)
+✓ Khởi động ứng dụng nhanh
+✓ Thực thi lệnh hệ thống
+✓ Lưu cấu hình tự động
+✓ Giao diện dễ sử dụng
+
+=====================================
+💾 DỮ LIỆU
+=====================================
+
+- Tất cả phím tắt được lưu trong file "hotkeys.json"
+- Dữ liệu lưu tự động sau mỗi thay đổi
+- Bạn có thể sao lưu file này để giữ cấu hình
+
+=====================================
+🔧 KHẮC PHỤC SỰ CỐ
+=====================================
+
+❌ Lỗi "Python không tìm thấy":
+→ Cài Python từ python.org
+→ Chọn "Add Python to PATH" khi cài
+
+❌ Hotkeys không hoạt động:
+→ Chạy ứng dụng dưới quyền Administrator
+→ Kiểm tra file hotkeys.json có đúng không
+
+❌ Mất kết nối mạng khi setup:
+→ Chạy lại setup.bat
+→ Kiểm tra kết nối Internet
+
+=====================================
+📞 HỖ TRỢ
+=====================================
+
+- GitHub: https://github.com/Robertpham912/windows-hotkey-manager
+- Tác giả: Phạm Gia Phúc (Robertpham912)
+
+=====================================
+
+Cảm ơn bạn sử dụng Windows Hotkey Manager! 🎉
